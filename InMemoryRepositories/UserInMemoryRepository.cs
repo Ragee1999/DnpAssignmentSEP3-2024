@@ -1,11 +1,21 @@
 ﻿using Entities;
 using RepositoryContracts;
 
-namespace InMemoryRepository;
+namespace InMemoryRepositories;
 
 public class UserInMemoryRepository : IUserRepository
 {
-    public List<User> Users { get; set; }
+    public List<User> Users { get; set; } = new List<User>();
+
+    public UserInMemoryRepository()
+    {
+        // SOME DUMMY DATA
+        Users.Add(new User {Id = 1, UserName = "Ragee", Password = "123"});
+        Users.Add(new User {Id = 2, UserName = "Daniel", Password = "123"});
+        Users.Add(new User {Id = 3, UserName = "Alperen", Password = "123"});
+        Users.Add(new User {Id = 4, UserName = "Baris", Password = "123"});
+        Users.Add(new User {Id = 4, UserName = "Zakaria", Password = "123"});
+    }
 
     public Task<User> AddAsync(User user)
     {

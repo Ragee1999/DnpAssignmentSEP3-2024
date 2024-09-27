@@ -1,7 +1,7 @@
 ﻿using Entities;
 using RepositoryContracts;
 
-namespace InMemoryRepository;
+namespace InMemoryRepositories;
 
 public class LikeInMemoryRepository : ILikeRepository
 {

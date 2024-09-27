@@ -5,7 +5,14 @@ namespace InMemoryRepositories;
 
 public class PostInMemoryRepository : IPostRepository
 {
-    public List<Post> Posts { get; set; }
+    public List<Post> Posts { get; set; } = new List<Post>();
+    
+    public PostInMemoryRepository()
+    {
+        // SOME DUMMY DATA
+        Posts.Add(new Post { Id = 1, Title = "Title1", Body = "bla bla", UserId = 1 });
+        Posts.Add(new Post { Id = 2, Title = "Title2", Body = "bla bla bla", UserId = 2 });
+    }
   
     public Task<Post> AddAsync(Post post)
     {

@@ -7,7 +7,14 @@ namespace InMemoryRepositories;
 
 public class CommentInMemoryRepository : ICommentRepository
 {
-    public List<Comment> Comments { get; set; }
+    public List<Comment> Comments { get; set; } = new List<Comment>();
+    
+    public CommentInMemoryRepository()
+    {
+        // SOME DUMMY DATA
+        Comments.Add(new Comment { Id = 1, PostId = 1, UserId = 1, Body = "nice" });
+        Comments.Add(new Comment { Id = 2, PostId = 2, UserId = 2, Body = "cool" });
+    }
 
     public Task<Comment> AddAsync(Comment comment)
     {
